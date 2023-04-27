@@ -1,0 +1,23 @@
+.card {
+    border-radius: 12px;
+}
+
+.card .fas {
+    color: #0063db;
+}
+
+.card:hover {
+    box-shadow: 0 0 11px #33333333;
+    background-color: #e5ecff;
+    transition: 0.3s;
+}
+.card a{
+    text-decoration: none; /* Remove underline */
+    color: inherit;
+}
+.nav-item .active {
+    color: #0d6efd !important;
+    background-color: #e5ecff;
+    border-radius: 8px;
+    font-weight: 500;
+}

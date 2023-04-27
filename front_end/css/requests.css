@@ -1,0 +1,34 @@
+.table-div{
+    /* make it with border and padding */
+    border-radius: 12px !important;
+    border: 1px solid #33333333;
+}
+.table-header tr th{
+    border-radius: 12px !important;
+    padding: 10px;
+}
+
+.status-accepted{
+    background-color: #ecfdf3;
+    color: green;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 8px;
+    display: inline-block
+}
+.status-refused{
+    background-color:#fff0f0;
+    color: #ff0000;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 8px;
+    display: inline-block
+}
+.status-received{
+    background-color: #eef5ff;
+    color: #004ee9;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 8px;
+    display: inline-block
+}
