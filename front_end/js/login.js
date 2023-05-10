@@ -17,7 +17,7 @@ const usernameField = document.getElementById('username');
 const usernameError = document.getElementById('usernameError');
 const passwordError = document.getElementById('passwordError');
 
-formLogin.addEventListener('submit', (e) => {
+formLogin.addEventListener('submit', async (e) => {
   e.preventDefault(); // Prevent form submission
 
   // Reset error messages
@@ -44,6 +44,17 @@ formLogin.addEventListener('submit', (e) => {
     return;
   }
 
-  // Form is valid, can proceed with submission
-  formLogin.submit();
+  // Send login request
+  const loginRes = await axios({
+    method: 'POST',
+    url: 'http://38.242.205.134:8080/auth',
+    data: {
+      username: e.target.username.value,
+      password: e.target.password.value,
+    }
+  });
+
+  console.log(loginRes);
 });
+
+

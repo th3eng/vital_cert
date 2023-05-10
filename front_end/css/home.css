@@ -2,9 +2,3 @@
 #section_1,#section_1_img {
     height: 300px;
 }
-.nav-item .active {
-    color: #0d6efd !important;
-    background-color: #e5ecff;
-    border-radius: 8px;
-    font-weight: 500;
-}
