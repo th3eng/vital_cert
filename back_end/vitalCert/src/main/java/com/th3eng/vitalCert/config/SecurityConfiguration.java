@@ -1,6 +1,5 @@
 package com.th3eng.vitalCert.config;
 
-import jakarta.servlet.Filter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,10 +21,12 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+                .cors()
+                .and()
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers( "/api/v1/citizen/auth/**")//all of these will not need to be authenticated
+                .requestMatchers("/api/v1/citizen/auth/**")//all of these will not need to be authenticated
                 .permitAll()
                 .anyRequest()
                 .authenticated()

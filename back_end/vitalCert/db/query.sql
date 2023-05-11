@@ -4,3 +4,5 @@ USE `vitalcert`;
 
 -- create employee table
 SELECT * FROM `citizen`;
+
+

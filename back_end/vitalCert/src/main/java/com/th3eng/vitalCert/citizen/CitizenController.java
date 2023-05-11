@@ -20,6 +20,7 @@ public class CitizenController {
     //login citizen
     @PostMapping("/auth/authenticate")
     public ResponseEntity<AuthenticationResponse> login(@RequestBody AuthenticateRequest request){
+        System.out.println(request);
         return ResponseEntity.ok(service.authenticate(request));
     }
 
@@ -28,4 +29,6 @@ public class CitizenController {
     public ResponseEntity<String> sayHello(){
         return ResponseEntity.ok("Hello");
     }
+
+
 }
