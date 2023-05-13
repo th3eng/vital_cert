@@ -1,4 +1,4 @@
-package com.th3eng.vitalCert.config;
+package com.th3eng.vitalCert.utils;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

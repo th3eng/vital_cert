@@ -1,5 +1,6 @@
 package com.th3eng.vitalCert.config;
 
+import com.th3eng.vitalCert.utils.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,7 +27,7 @@ public class SecurityConfiguration {
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/v1/citizen/auth/**")//all of these will not need to be authenticated
+                .requestMatchers("/api/v1/citizen/auth/**", "/api/v1/employee/auth/**")//all of these will not need to be authenticated
                 .permitAll()
                 .anyRequest()
                 .authenticated()
@@ -39,5 +40,4 @@ public class SecurityConfiguration {
 
         return http.build();
     }
-
 }

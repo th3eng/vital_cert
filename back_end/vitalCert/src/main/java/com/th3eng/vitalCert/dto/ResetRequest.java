@@ -1,4 +1,4 @@
-package com.th3eng.vitalCert.citizen;
+package com.th3eng.vitalCert.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RegisterRequest {
-    private String ssn;
-    private String password;
+public class ResetRequest {
+    String ssn;
+    String password;
+    String newPassword;
 }

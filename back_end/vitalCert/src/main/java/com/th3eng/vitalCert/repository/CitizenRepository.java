@@ -1,5 +1,6 @@
-package com.th3eng.vitalCert.citizen;
+package com.th3eng.vitalCert.repository;
 
+import com.th3eng.vitalCert.model.Citizen;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

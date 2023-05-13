@@ -9,5 +9,4 @@ public class VitalCertApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(VitalCertApplication.class, args);
 	}
-
 }

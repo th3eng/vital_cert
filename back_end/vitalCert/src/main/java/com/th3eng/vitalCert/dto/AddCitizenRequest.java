@@ -1,31 +1,18 @@
-package com.th3eng.vitalCert.citizen;
+package com.th3eng.vitalCert.dto;
 
-import com.th3eng.vitalCert.utils.Role;
-import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
-@Entity
-@Table
+@Data
 @Builder
-public class Citizen implements UserDetails {
+@AllArgsConstructor
+@NoArgsConstructor
+public class AddCitizenRequest {
 
-    @Id
-    @SequenceGenerator(
-            name = "citizen_sequence",
-            sequenceName = "citizen_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.TABLE,
-            generator = "citizen_sequence"
-    )
     private Long id;
     private String ssn;
     private String firstName;
@@ -44,7 +31,7 @@ public class Citizen implements UserDetails {
     private int social_status_id;
     private int military_condition_id;
 
-    public Citizen(
+    public AddCitizenRequest(
             String ssn,
             String firstName,
             String middleName,
@@ -60,8 +47,7 @@ public class Citizen implements UserDetails {
             int nationality_id,
             int religion_id,
             int social_status_id,
-            int military_condition_id,
-            Role role) {
+            int military_condition_id) {
         this.ssn = ssn;
         this.firstName = firstName;
         this.middleName = middleName;
@@ -78,50 +64,22 @@ public class Citizen implements UserDetails {
         this.religion_id = religion_id;
         this.social_status_id = social_status_id;
         this.military_condition_id = military_condition_id;
-        this.role = role;
     }
 
-    public Citizen(
-            Long id,
-            String ssn,
-            String firstName,
-            String middleName,
-            String lastName,
-            Date birthDate,
-            String place_of_birth,
-            String address,
-            String father_ssn,
-            String mother_ssn,
-            byte[] fingerprint,
-            String password,
-            int gender_id,
-            int nationality_id,
-            int religion_id,
-            int social_status_id,
-            int military_condition_id,
-            Role role) {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
         this.id = id;
-        this.ssn = ssn;
-        this.firstName = firstName;
-        this.middleName = middleName;
-        this.lastName = lastName;
-        this.birthDate = birthDate;
-        this.place_of_birth = place_of_birth;
-        this.address = address;
-        this.father_ssn = father_ssn;
-        this.mother_ssn = mother_ssn;
-        this.fingerprint = fingerprint;
-        this.password = password;
-        this.gender_id = gender_id;
-        this.nationality_id = nationality_id;
-        this.religion_id = religion_id;
-        this.social_status_id = social_status_id;
-        this.military_condition_id = military_condition_id;
-        this.role = role;
     }
 
-    public Citizen() {
+    public String getSsn() {
+        return ssn;
+    }
 
+    public void setSsn(String ssn) {
+        this.ssn = ssn;
     }
 
     public String getFirstName() {
@@ -188,12 +146,20 @@ public class Citizen implements UserDetails {
         this.mother_ssn = mother_ssn;
     }
 
-    public byte[] getFinger_print() {
+    public byte[] getFingerprint() {
         return fingerprint;
     }
 
-    public void setFinger_print(byte[] fingerprint) {
+    public void setFingerprint(byte[] fingerprint) {
         this.fingerprint = fingerprint;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public int getGender_id() {
@@ -234,55 +200,5 @@ public class Citizen implements UserDetails {
 
     public void setMilitary_condition_id(int military_condition_id) {
         this.military_condition_id = military_condition_id;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getSsn() {
-        return ssn;
-    }
-
-    public void setSsn(String ssn) {
-        this.ssn = ssn;
-    }
-
-    @Enumerated(EnumType.STRING)
-    private Role role;
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority(role.name()));
-    }
-
-    @Override
-    public String getPassword() {
-        return password;
-    }
-
-    @Override
-    public String getUsername() {
-        return ssn;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
     }
 }

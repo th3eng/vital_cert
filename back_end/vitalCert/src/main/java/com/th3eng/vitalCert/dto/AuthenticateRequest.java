@@ -1,4 +1,4 @@
-package com.th3eng.vitalCert.citizen;
+package com.th3eng.vitalCert.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
