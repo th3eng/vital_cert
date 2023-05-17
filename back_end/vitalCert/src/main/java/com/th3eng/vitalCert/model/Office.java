@@ -19,15 +19,15 @@ public class Office {
     )
 
     private int id;
-    private String officeAddress;
+    private String address;
 
-    public Office(String officeAddress) {
-        this.officeAddress = officeAddress;
+    public Office(String address) {
+        this.address = address;
     }
 
-    public Office(int id, String officeAddress) {
+    public Office(int id, String address) {
         this.id = id;
-        this.officeAddress = officeAddress;
+        this.address = address;
     }
 
     public Office() {
@@ -42,10 +42,10 @@ public class Office {
     }
 
     public String getOfficeAddress() {
-        return officeAddress;
+        return address;
     }
 
-    public void setOfficeAddress(String officeAddress) {
-        this.officeAddress = officeAddress;
+    public void setOfficeAddress(String address) {
+        this.address = address;
     }
 }

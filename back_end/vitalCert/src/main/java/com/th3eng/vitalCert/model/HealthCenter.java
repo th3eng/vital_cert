@@ -21,27 +21,27 @@ public class HealthCenter {
 
     private int id;
     private int governorateId;
-    private String healthCenterName;
-    private String healthCenterAddress;
+    private String name;
+    private String address;
 
     public HealthCenter(
             int id,
             int governorateId,
-            String healthCenterName,
-            String healthCenterAddress) {
+            String name,
+            String address) {
         this.id = id;
         this.governorateId = governorateId;
-        this.healthCenterName = healthCenterName;
-        this.healthCenterAddress = healthCenterAddress;
+        this.name = name;
+        this.address = address;
     }
 
     public HealthCenter(
             int governorateId,
-            String healthCenterName,
-            String healthCenterAddress) {
+            String name,
+            String address) {
         this.governorateId = governorateId;
-        this.healthCenterName = healthCenterName;
-        this.healthCenterAddress = healthCenterAddress;
+        this.name = name;
+        this.address = address;
     }
 
     public HealthCenter() {
@@ -64,18 +64,18 @@ public class HealthCenter {
     }
 
     public String getHealthCenterName() {
-        return healthCenterName;
+        return name;
     }
 
-    public void setHealthCenterName(String healthCenterName) {
-        this.healthCenterName = healthCenterName;
+    public void setHealthCenterName(String name) {
+        this.name = name;
     }
 
     public String getHealthCenterAddress() {
-        return healthCenterAddress;
+        return address;
     }
 
-    public void setHealthCenterAddress(String healthCenterAddress) {
-        this.healthCenterAddress = healthCenterAddress;
+    public void setHealthCenterAddress(String address) {
+        this.address = address;
     }
 }

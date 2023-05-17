@@ -19,15 +19,15 @@ public class Gender {
     )
 
     private int id;
-    private String genderName;
+    private String gender;
 
-    public Gender(String genderName) {
-        this.genderName = genderName;
+    public Gender(String gender) {
+        this.gender = gender;
     }
 
-    public Gender(int id, String genderName) {
+    public Gender(int id, String gender) {
         this.id = id;
-        this.genderName = genderName;
+        this.gender = gender;
     }
 
     public Gender() {
@@ -42,10 +42,10 @@ public class Gender {
     }
 
     public String getGender() {
-        return genderName;
+        return gender;
     }
 
-    public void setGender(String genderName) {
-        this.genderName = genderName;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }

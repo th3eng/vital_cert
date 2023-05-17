@@ -2,6 +2,7 @@ package com.th3eng.vitalCert.controller;
 
 import com.th3eng.vitalCert.dto.AddCitizenRequest;
 import com.th3eng.vitalCert.dto.AuthenticateRequest;
+import com.th3eng.vitalCert.dto.EmployeeRegisterRequest;
 import com.th3eng.vitalCert.dto.ResetRequest;
 import com.th3eng.vitalCert.service.EmployeeAuthenticationService;
 import com.th3eng.vitalCert.service.EmployeeService;
@@ -21,9 +22,14 @@ public class EmployeeController {
     private final EmployeeAuthenticationService authenticateService;
 
     //login employee
-    @PostMapping("/auth/authenticate")
+    @PostMapping("/auth/authenticate2")
     public ResponseEntity<?> authenticate(@RequestBody AuthenticateRequest request) {
         return authenticateService.authenticate(request);
+    }
+
+    @PostMapping("/auth/register")
+    public ResponseEntity<?> register(@RequestBody EmployeeRegisterRequest request) {
+        return authenticateService.register(request);
     }
 
     //reset password

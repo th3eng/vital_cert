@@ -20,14 +20,12 @@ public class Invoice {
     private Long id;
     private Long ssn;
     private Long certificateNumber;
-    private String type;
     private String numberOfCopies;
     private String priceId;
 
-    public Invoice(Long ssn, Long certificateNumber, String type, String numberOfCopies, String priceId) {
+    public Invoice(Long ssn, Long certificateNumber, String numberOfCopies, String priceId) {
         this.ssn = ssn;
         this.certificateNumber = certificateNumber;
-        this.type = type;
         this.numberOfCopies = numberOfCopies;
         this.priceId = priceId;
     }
@@ -35,20 +33,14 @@ public class Invoice {
     public Invoice() {
     }
 
-    public Invoice(
-            Long id,
-            Long ssn,
-            Long certificateNumber,
-            String type,
-            String numberOfCopies,
-            String priceId) {
+    public Invoice(Long id, Long ssn, Long certificateNumber, String numberOfCopies, String priceId) {
         this.id = id;
         this.ssn = ssn;
         this.certificateNumber = certificateNumber;
-        this.type = type;
         this.numberOfCopies = numberOfCopies;
         this.priceId = priceId;
     }
+
 
     public Long getId() {
         return id;
@@ -72,14 +64,6 @@ public class Invoice {
 
     public void setCertificateNumber(Long certificateNumber) {
         this.certificateNumber = certificateNumber;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public String getNumberOfCopies() {

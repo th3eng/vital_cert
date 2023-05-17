@@ -27,27 +27,19 @@ public class Marriage {
     private Long wifeSsn;
     private Date marriageDate;
     private String marriagePlace;
+    private Date registrationDate;
 
-    public Marriage(Long certificateNumber, int officeId, Long husbandSsn, Long wifeSsn, Date marriageDate, String marriagePlace) {
+    public Marriage(Long certificateNumber, int officeId, Long husbandSsn, Long wifeSsn, Date marriageDate, String marriagePlace, Date registrationDate) {
         this.certificateNumber = certificateNumber;
         this.officeId = officeId;
         this.husbandSsn = husbandSsn;
         this.wifeSsn = wifeSsn;
         this.marriageDate = marriageDate;
         this.marriagePlace = marriagePlace;
+        this.registrationDate = registrationDate;
     }
 
-    public Marriage() {
-    }
-
-    public Marriage(
-            int id,
-            Long certificateNumber,
-            int officeId,
-            Long husbandSsn,
-            Long wifeSsn,
-            Date marriageDate,
-            String marriagePlace) {
+    public Marriage(int id, Long certificateNumber, int officeId, Long husbandSsn, Long wifeSsn, Date marriageDate, String marriagePlace, Date registrationDate) {
         this.id = id;
         this.certificateNumber = certificateNumber;
         this.officeId = officeId;
@@ -55,6 +47,18 @@ public class Marriage {
         this.wifeSsn = wifeSsn;
         this.marriageDate = marriageDate;
         this.marriagePlace = marriagePlace;
+        this.registrationDate = registrationDate;
+    }
+
+    public Marriage() {
+    }
+
+    public Date getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public void setRegistrationDate(Date registrationDate) {
+        this.registrationDate = registrationDate;
     }
 
     public int getId() {

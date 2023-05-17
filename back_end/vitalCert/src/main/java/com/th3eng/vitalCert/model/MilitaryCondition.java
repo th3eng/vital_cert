@@ -19,15 +19,15 @@ public class MilitaryCondition {
     )
 
     private int id;
-    private String militaryConditionName;
+    private String militaryCondition;
 
-    public MilitaryCondition(String militaryConditionName) {
-        this.militaryConditionName = militaryConditionName;
+    public MilitaryCondition(String militaryCondition) {
+        this.militaryCondition = militaryCondition;
     }
 
-    public MilitaryCondition(int id, String militaryConditionName) {
+    public MilitaryCondition(int id, String militaryCondition) {
         this.id = id;
-        this.militaryConditionName = militaryConditionName;
+        this.militaryCondition = militaryCondition;
     }
 
     public MilitaryCondition() {
@@ -42,10 +42,10 @@ public class MilitaryCondition {
     }
 
     public String getMilitaryCondition() {
-        return militaryConditionName;
+        return militaryCondition;
     }
 
-    public void setMilitaryCondition(String militaryConditionName) {
-        this.militaryConditionName = militaryConditionName;
+    public void setMilitaryCondition(String militaryCondition) {
+        this.militaryCondition = militaryCondition;
     }
 }
