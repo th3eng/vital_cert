@@ -21,17 +21,18 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class ApplicationConfig {
 
     private final EmployeeRepository userRepository;
+    private  final CitizenRepository citizenRepository;
 
     @Bean
-    public UserDetailsService userDetailsService() {
+    public UserDetailsService userDetailsService(String test) {
+        System.out.println("@@@@@@@ test = " + test);
         return username -> (UserDetails) userRepository.findBySsn(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
     }
 
-    @Bean
-    public AuthenticationProvider authenticationProvider() {
+    public AuthenticationProvider authenticationProvider(String test) {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-        authProvider.setUserDetailsService(userDetailsService());
+        authProvider.setUserDetailsService(userDetailsService(test));
         authProvider.setPasswordEncoder(passwordEncoder());
         return authProvider;
     }

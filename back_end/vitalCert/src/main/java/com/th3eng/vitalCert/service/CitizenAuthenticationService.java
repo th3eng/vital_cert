@@ -92,7 +92,7 @@ public class CitizenAuthenticationService {
         } catch (AuthenticationException e) {
             return ResponseEntity.badRequest().body(Map.of(
                     "success", false,
-                    "message", "Invalid username/password supplied"
+                    "message", "Invalid username/password supplied 1"
             ));
         }
 
@@ -102,14 +102,14 @@ public class CitizenAuthenticationService {
         if(user.getPassword().isEmpty()){
             return ResponseEntity.badRequest().body(Map.of(
                     "success", false,
-                    "message", "Invalid username/password supplied"
+                    "message", "This citizen is not registered yet"
             ));
         }
 
         if(!passwordEncoder.matches(request.getPassword(), user.getPassword())){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of(
                     "success", false,
-                    "message", "Invalid username/password supplied"
+                    "message", "Invalid username/password supplied 2"
             ));
         }
 

@@ -59,7 +59,7 @@ async function handleLoginFormSubmit() {
 
   try {
     // Replace the URL with the endpoint for logging in
-    const response = await axios.post('http://localhost:8080/api/v1/citizen/auth/authenticate', 
+    const response = await axios.post('http://localhost:8080/api/v1/employee/auth/authenticate', 
     {
       "ssn": username,
       password: password
@@ -73,7 +73,7 @@ async function handleLoginFormSubmit() {
     localStorage.setItem('authToken', authToken);
 
     // Redirect to the dashboard or another page after successful login
-    window.location.href = '../portal/requests.html';
+    window.location.href = '../dashboard/citizen/index.html';
   } catch (error) {
     console.error('Error logging in', error);
     // Show an error message (customize this part as needed)
