@@ -27,8 +27,6 @@ public class EmployeeAuthenticationService {
     private final AuthenticationManager authenticationManager;
 
     public ResponseEntity<?> authenticate(AuthenticateRequest request) {
-        System.out.println("request = " + request.getSsn());
-        System.out.println("request = " + request.getPassword());
         try {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(request.getSsn(), request.getPassword())

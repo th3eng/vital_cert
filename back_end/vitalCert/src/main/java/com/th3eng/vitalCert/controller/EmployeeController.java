@@ -51,4 +51,16 @@ public class EmployeeController {
         return service.getAllCitizens();
     }
 
+    //get citizen by id
+    @GetMapping("/getCitizenById")
+    public ResponseEntity<?> getCitizenById(@RequestBody AuthenticateRequest request){
+        return service.getCitizenBySsn(request);
+    }
+
+    //update citizen info
+    @PostMapping("/updateCitizen")
+    public ResponseEntity<?> updateCitizen(@RequestBody AddCitizenRequest newCitizen){
+        return service.updateCitizen(newCitizen);
+    }
+
 }
