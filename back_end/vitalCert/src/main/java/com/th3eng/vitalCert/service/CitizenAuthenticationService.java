@@ -86,6 +86,7 @@ public class CitizenAuthenticationService {
     //login
     public ResponseEntity<?> authenticate(AuthenticateRequest request) {
         try {
+
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(request.getSsn(), request.getPassword())
             );
