@@ -9,6 +9,7 @@ import com.th3eng.vitalCert.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,7 +23,7 @@ public class EmployeeController {
     private final EmployeeAuthenticationService authenticateService;
 
     //login employee
-    @PostMapping("/auth/authenticate2")
+    @PostMapping("/auth/authenticate")
     public ResponseEntity<?> authenticate(@RequestBody AuthenticateRequest request) {
         return authenticateService.authenticate(request);
     }
@@ -42,6 +43,12 @@ public class EmployeeController {
     @PostMapping("/createCitizen")
     public ResponseEntity<?> createCitizen(@RequestBody AddCitizenRequest newCitizen){
         return service.createCitizen(newCitizen);
+    }
+
+    //get all citizens
+    @GetMapping("/getAllCitizens")
+    public ResponseEntity<?> getAllCitizens(){
+        return service.getAllCitizens();
     }
 
 }

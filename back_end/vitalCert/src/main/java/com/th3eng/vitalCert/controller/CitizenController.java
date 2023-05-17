@@ -3,6 +3,7 @@ package com.th3eng.vitalCert.controller;
 import com.th3eng.vitalCert.service.CitizenAuthenticationService;
 import com.th3eng.vitalCert.dto.AuthenticateRequest;
 import com.th3eng.vitalCert.dto.RegisterRequest;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

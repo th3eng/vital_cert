@@ -1,9 +1,7 @@
 package com.th3eng.vitalCert.service;
 
 import com.th3eng.vitalCert.model.Citizen;
-import com.th3eng.vitalCert.model.User;
 import com.th3eng.vitalCert.repository.CitizenRepository;
-import com.th3eng.vitalCert.repository.UserRepository;
 import com.th3eng.vitalCert.utils.JwtService;
 import com.th3eng.vitalCert.dto.AuthenticateRequest;
 import com.th3eng.vitalCert.dto.RegisterRequest;
@@ -23,7 +21,6 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class CitizenAuthenticationService {
     private final CitizenRepository repository;
-    private final UserRepository userRepository;
 
     private final PasswordEncoder passwordEncoder;
 
@@ -69,17 +66,6 @@ public class CitizenAuthenticationService {
                         "message", "Citizen account already exists"
                 ));
             }
-
-            // if password is not exist in database set the new password
-            var citizen = optional.get();
-            citizen.setPassword(passwordEncoder.encode(request.getPassword()));
-            repository.save(citizen);
-            var user = User.builder()
-                    .ssn(request.getSsn())
-                    .password(passwordEncoder.encode(request.getPassword()))
-                    .role(Role.USER)
-                    .build();
-            userRepository.save(user);
         }
 
         var citizen = Citizen.builder()

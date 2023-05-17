@@ -1,6 +1,8 @@
 package com.th3eng.vitalCert.config;
 
-import com.th3eng.vitalCert.repository.UserRepository;
+import com.th3eng.vitalCert.model.Employee;
+import com.th3eng.vitalCert.repository.CitizenRepository;
+import com.th3eng.vitalCert.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +20,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @RequiredArgsConstructor
 public class ApplicationConfig {
 
-    private final UserRepository userRepository;
+    private final EmployeeRepository userRepository;
 
     @Bean
     public UserDetailsService userDetailsService() {
